@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Main {
 
     @SneakyThrows
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         var in = new Scanner(System.in);
         System.out.println("Enter from unit (Kilometer, Mile, MarineMile):");
         var from = Unit.builder().name(in.nextLine()).build();

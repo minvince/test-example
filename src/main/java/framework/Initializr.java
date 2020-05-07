@@ -1,6 +1,6 @@
 package framework;
 
-import config.Configuration;
+import domain.model.Configuration;
 import config.Loader;
 import domain.model.Unit;
 import domain.service.Converter;

@@ -1,6 +1,6 @@
 package domain.service;
 
-import config.Configuration;
+import domain.model.Configuration;
 import lombok.RequiredArgsConstructor;
 import domain.model.Unit;
 import domain.model.Value;
@@ -29,17 +29,17 @@ public class SimpleConverter implements Converter {
             return result.build();
         }
 
-        configuration = config
-                .stream()
-                .filter(x -> x.getTo().equals(value.getUnit()) && x.getFrom().equals(to))
-                .findFirst()
-                .orElse(null);
+//        configuration = config
+//                .stream()
+//                .filter(x -> x.getTo().equals(value.getUnit()) && x.getFrom().equals(to))
+//                .findFirst()
+//                .orElse(null);
+//
+//        if (configuration != null) {
+//            result.value(value.getValue().divide(configuration.getCoefficient(), 2, RoundingMode.HALF_UP));
+//            return result.build();
+//        }
 
-        if (configuration != null) {
-            result.value(value.getValue().divide(configuration.getCoefficient(), 2, RoundingMode.HALF_UP));
-            return result.build();
-        }
-
-        throw new Exception(String.format("config.Configuration for %s and %s not found", value.getUnit(), to));
+        throw new Exception(String.format("domain.model.Configuration for %s and %s not found", value.getUnit(), to));
     }
 }
